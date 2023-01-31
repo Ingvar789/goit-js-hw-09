@@ -65,11 +65,17 @@ function convertMs(ms) {
 }
 
 function onStartBtnClick() {
-        setInterval(() => {
+        const intervalId = setInterval(() => {
             const currentTime = Date.now();
             const deltaTime = selectedDate - currentTime;
-            const time = convertMs(deltaTime);
-            updateTime(time);
+            if (deltaTime > 0) {
+              const time = convertMs(deltaTime);
+              updateTime(time);
+            }
+            else {
+              clearInterval(intervalId);
+            }
+            
         }, 1000);
 }
 

@@ -9,6 +9,7 @@ const refs = {
 const data = {};
 
 refs.formInput.addEventListener('input', onInput);
+console.log(refs.formInput);
 refs.createtBtn.addEventListener('click', onCreateBtnSubmit);
 
 function onInput(e) {
@@ -29,11 +30,15 @@ function createPromise(position, delay) {
 };
 
 function onCreateBtnSubmit(e) {
-    e.preventDefault();
+  e.preventDefault();
+  refs.formInput.delay.value = '';
+  refs.formInput.step.value = '';
+  refs.formInput.amount.value = '';
     for (let position = 1; position <= data.amount; position += 1) { 
             createPromise(position, data.delay)
             .then(({position, delay}) => Notiflix.Notify.success((`✅ Fulfilled promise ${position} in ${delay}ms`)))
             .catch(({ position, delay }) => Notiflix.Notify.failure((`❌ Rejected promise ${position} in ${delay}ms`)));
         data.delay += data.step;   
     }
+  
     }
