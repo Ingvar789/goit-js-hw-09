@@ -1,1 +1,0 @@
-{"mappings":"AAIAA,QAAQC,IAAI","sources":["src/js/01-color-switcher.js"],"sourcesContent":["\n// const log = time => console.log('log every ${time}ms');\n\n// setInterval(log, 2000, 2000);\nconsole.log('s');\n"],"names":["console","log"],"version":3,"file":"01-color-switcher.f6363d65.js.map"}
